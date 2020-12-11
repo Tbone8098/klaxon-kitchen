@@ -11,6 +11,6 @@ app.use(cors());
 app.use(express.json()); //Make sure that the .json has the ()!!
 app.use(express.urlencoded({ extended: true }));
 
-require("./routes/route.order")(app);
+require("./routes/routes")(app);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

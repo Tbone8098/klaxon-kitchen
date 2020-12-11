@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-    .connect("mongodb://localhost/name_of_db", {
+    .connect("mongodb://localhost/Klaxon-Kitchen", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
