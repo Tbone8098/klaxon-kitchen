@@ -4,11 +4,11 @@ const Order = require("../controllers/controller.order");
 //C
 Orders.post("/new", Order.create);
 //R
-// app.get("/order/", controller.getAll);
-// app.get("/order/:id", controller.getOne);
+// Orders.get("/order/", Order.getAll);
+// Orders.get("/order/:id", Order.getOne);
 // //U
-// app.patch("/order/update/:id", controller.updateOne);
+Orders.patch("/:order_id/update", Order.updateOne);
 // //D
-// app.delete("/order/delete/:id", controller.deleteOne);
+Orders.delete("/:order_id/delete", Order.deleteOne);
 
 module.exports = Orders;

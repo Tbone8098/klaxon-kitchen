@@ -7,8 +7,9 @@ Kitchens.post("/new", Kitchen.create);
 // Kitchens.get("/order/", Kitchen.getAll);
 // Kitchens.get("/order/:id", Kitchen.getOne);
 // //U
-Kitchens.patch("/update/:id", Kitchen.updateOne);
+Kitchens.patch("/:kitchen_id/add_order/:order_id", Kitchen.addOrder);
+Kitchens.patch("/:kitchen_id/remove_order/:order_id", Kitchen.removeOrder);
 // //D
-// Kitchens.delete("/order/delete/:id", Kitchen.deleteOne);
+Kitchens.delete("/:kitchen_id/delete", Kitchen.deleteOne);
 
 module.exports = Kitchens;

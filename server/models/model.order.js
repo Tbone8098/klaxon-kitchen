@@ -2,19 +2,23 @@ const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema(
     {
-        Que: {
+        que: {
             type: String,
             required: true,
         },
-        Order: {
+        order: {
             type: String,
             required: true,
         },
-        Notes: String,
-        Status: {
+        notes: String,
+        status: {
             type: String,
             required: true,
             default: "In Pro",
+        },
+        kitchenId: {
+            type: String,
+            required: true,
         },
     },
     { timestamps: true }

@@ -3,11 +3,11 @@ const Order = require("./model.order");
 
 const KitchenSchema = new mongoose.Schema(
     {
-        KitchenName: {
+        kitchenName: {
             type: String,
             required: true,
         },
-        KitchenOrders: {
+        kitchenOrders: {
             type: mongoose.Schema.Types.ObjectId,
             ref: Order,
         },
