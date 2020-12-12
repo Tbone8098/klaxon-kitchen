@@ -7,10 +7,12 @@ const KitchenSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        kitchenOrders: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: Order,
-        },
+        kitchenOrders: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: Order,
+            },
+        ],
     },
     { timestamps: true }
 );

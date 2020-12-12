@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const OrderSchema = new mongoose.Schema(
     {
         que: {
-            type: String,
+            type: Number,
             required: true,
+            default: 1,
         },
         order: {
             type: String,

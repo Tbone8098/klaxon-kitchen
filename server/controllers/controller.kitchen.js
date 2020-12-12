@@ -19,6 +19,44 @@ module.exports = {
             });
     },
     // R
+    getAll: (req, res) => {
+        Kitchen.find()
+            .populate("kitchenOrders")
+            .then((resp) => {
+                if (resp === null || resp === undefined) {
+                    res.json({
+                        data: "error getting all records",
+                        status: 500,
+                    });
+                }
+                res.json({
+                    data: resp,
+                    status: 200,
+                });
+            })
+            .catch((err) => {
+                res.json({
+                    data: err,
+                    status: 500,
+                });
+            });
+    },
+    getOne: (req, res) => {
+        Kitchen.findOne({ _id: req.params.id })
+            .populate("kitchenOrders")
+            .then((resp) => {
+                res.json({
+                    data: resp,
+                    status: 200,
+                });
+            })
+            .catch((err) => {
+                res.json({
+                    data: resp,
+                    status: 500,
+                });
+            });
+    },
     // U
     addOrder: (req, res) => {
         Kitchen.findOneAndUpdate(
