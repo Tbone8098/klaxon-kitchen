@@ -1,13 +1,14 @@
-const controller = require("../controllers/controller.order");
+const Orders = require("express").Router();
+const Order = require("../controllers/controller.order");
 
-module.exports = (app) => {
-    //C
-    app.post("/api/new", controller.create);
-    //R
-    app.get("/api/", controller.getAll);
-    app.get("/api/:id", controller.getOne);
-    //U
-    app.patch("/api/update/:id", controller.updateOne);
-    //D
-    app.delete("/api/delete/:id", controller.deleteOne);
-};
+//C
+Orders.post("/new", Order.create);
+//R
+// Orders.get("/order/", Order.getAll);
+// Orders.get("/order/:id", Order.getOne);
+// //U
+Orders.patch("/:order_id/update", Order.updateOne);
+// //D
+Orders.delete("/:order_id/delete", Order.deleteOne);
+
+module.exports = Orders;
