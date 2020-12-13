@@ -1,6 +1,9 @@
 const Order = require("./controller.order");
-// const User = require("./controller.user");
+const kitchen = require("./controller.kitchen");
+const User = require("./controller.user");
 
 module.exports = {
     Order,
+    Kitchen,
+    User,
 };
