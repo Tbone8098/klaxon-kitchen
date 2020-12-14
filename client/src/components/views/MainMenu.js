@@ -10,7 +10,7 @@ and be directed to that specific kitchen where they will
 be able to input an order.
 */
 
-export const MainMenu = () => {
+export const MainMenu = (props) => {
     const [allKitchens, setAllKitchens] = useState([]);
 
     useEffect(() => {
@@ -46,6 +46,7 @@ export const MainMenu = () => {
 
     return (
         <div>
+            {/* <Navbar /> */}
             <h1>Main Menu</h1>
             <h3>Add a Kitchen</h3>
             <form onSubmit={createNewKitchen}>

@@ -4,7 +4,11 @@ import "./css/navbar.css";
 
 export const Navbar = () => {
     const goHome = () => {
-        navigate(`/`);
+        navigate(`/mainMenu`);
+    };
+    const logout = (e) => {
+        sessionStorage.clear();
+        navigate("/landingPage");
     };
     return (
         <nav>
@@ -17,7 +21,7 @@ export const Navbar = () => {
                 <h1>Dashboard</h1>
             </div>
             <div className="right">
-                <h3>Kitchen</h3>
+                <button onClick={logout}>Logout</button>
             </div>
         </nav>
     );

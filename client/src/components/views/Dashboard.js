@@ -63,68 +63,78 @@ export const Dashboard = (props) => {
     };
 
     return (
-        <div className="content">
-            {kitchen != null ? (
-                <div>
-                    <h1>{kitchen.kitchenName}</h1>
-                    <div className="row justify-evenly">
-                        <div className="OrdersInQue">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Que Number</th>
-                                        <th>Order</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {kitchen.kitchenOrders.map((order, k) => (
-                                        <tr key={k}>
-                                            <td>{order.que}</td>
-                                            <td>{order.order}</td>
-                                            <td>
-                                                <span
-                                                    onClick={() =>
-                                                        deleteOrder(order._id)
-                                                    }
-                                                >
-                                                    Delete
-                                                </span>{" "}
-                                                | <span>Change Status</span>
-                                            </td>
+        <div>
+            <div className="content">
+                {/* <Navbar /> */}
+                {kitchen != null ? (
+                    <div>
+                        <h1>{kitchen.kitchenName}</h1>
+                        <div className="row justify-evenly">
+                            <div className="OrdersInQue">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Que Number</th>
+                                            <th>Order</th>
+                                            <th>Actions</th>
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                        <div className="addOrderBox">
-                            <h3>Add Order</h3>
-                            <form onSubmit={addOrder}>
-                                <section>
-                                    <label htmlFor="order">Order:</label>
-                                    <input
-                                        type="text"
-                                        name="order"
-                                        id="order"
-                                    />
-                                </section>
-                                <section>
-                                    <label htmlFor="notes">Notes:</label>
-                                    <textarea
-                                        name="notes"
-                                        id="notes"
-                                        cols="30"
-                                        rows="10"
-                                    ></textarea>
-                                </section>
-                                <button>Submit</button>
-                            </form>
+                                    </thead>
+                                    <tbody>
+                                        {kitchen.kitchenOrders.map(
+                                            (order, k) => (
+                                                <tr key={k}>
+                                                    <td>{order.que}</td>
+                                                    <td>{order.order}</td>
+                                                    <td>
+                                                        <span
+                                                            onClick={() =>
+                                                                deleteOrder(
+                                                                    order._id
+                                                                )
+                                                            }
+                                                        >
+                                                            Delete
+                                                        </span>{" "}
+                                                        |{" "}
+                                                        <span>
+                                                            Change Status
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="addOrderBox">
+                                <h3>Add Order</h3>
+                                <form onSubmit={addOrder}>
+                                    <section>
+                                        <label htmlFor="order">Order:</label>
+                                        <input
+                                            type="text"
+                                            name="order"
+                                            id="order"
+                                        />
+                                    </section>
+                                    <section>
+                                        <label htmlFor="notes">Notes:</label>
+                                        <textarea
+                                            name="notes"
+                                            id="notes"
+                                            cols="30"
+                                            rows="10"
+                                        ></textarea>
+                                    </section>
+                                    <button>Submit</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ) : (
-                <p>Loading...</p>
-            )}
+                ) : (
+                    <p>Loading...</p>
+                )}
+            </div>
         </div>
     );
 };
